@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Rufina&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+html{
+	scroll-behavior: smooth;
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding: 0;
+	background-color: #1b1a1b;
+	box-sizing: border-box;
+}
+.cOrange{
+	color: #F16527;
+}
+.cBlue{
+	color: #2CBFD3;
+}
+#logo{
+	width: 220px;
+	height: 160px;
+}
+.navbar{
+	z-index: 2;
+	width: 100%;
+	position: fixed;
+}
+.navbar::after{
+	content: '';
+	width: 100%;
+	left: 0;
+	top: 0;
+	height: 100%;
+	position: absolute;
+	opacity: 0.5;
+	background-color: #1b1a1b;
+	z-index: -1;
+}
+.navbar-nav li{
+	padding-right: 20px;
+}
+.nav-link{
+	color: #fff !important;
+	font-family: 'Rufina', serif;
+	font-size: 24px;
+	font-weight: 400;
+}
+.nav-link::before{
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 2px;
+	bottom: calc(50% - 16px);
+	background-color: black;
+}
+.nav-item:nth-child(5) > .nav-link::before{
+	content: none;
+}
+.nav-item:nth-child(5) > .nav-link:hover{
+	transition: all 0.5s;	
+	box-sizing: border-box;
+	color: #f16527 !important;
+}
+.nav-item:nth-child(5) > .nav-link:hover::after{
+	color: white;
+}
+.nav-link:hover:before{
+	width: 80px;
+	transition:all .3s ease;
+}
+.bucket{
+	position: relative;
+}
+.bucket::before{
+	background-color: transparent;
+}
+.bucket::after{
+	content: attr(data-content);
+	text-align: center;
+	font-size: 16px;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	top: -15px;
+	right: -15px;
+	border-radius: 50%;
+	background-color: red;
+}
+.carousel-inner img{
+	width: 100%;
+	height: 100%;
+}
+.navbar-nav > .active > a{
+	color: #F16527 !important;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+	width: 50px !important;
+	height: 50px !important;
+}
+.welcomeText{
+	font-family: 'Itim',cursive; 
+	color: white;
+}
+.section{
+	text-align: left;
+	background-color: #fff;
+}
+.msg{
+	text-align: center;
+	color: white;
+}
+.cards{
+	font-size: auto;
+	color: white;
+}
+.cards img{
+	width: 100px;
+	height: auto;
+	border-radius: 10px;
+}
+.cards h3{
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.tagText{
+	color: white;
+	font-size: 35px;
+	font-family: 'Lobster', cursive;
+	letter-spacing: 3px;
+}
+.options{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.option-item{
+	color: white;
+	border-radius: 10px;
+	margin-top:30px;
+	margin-left: 30px;
+	overflow: hidden;
+	width: 300px;
+	height: auto;
+	border: 1px solid white;
+	position: relative;
+}
+.flip-box {
+	background-color: transparent;
+	width: 300px;
+	height: 200px;
+	perspective: 1000px; 
+}
+.flip-box-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.4s;
+	transform-style: preserve-3d;
+}
+.flip-box:hover .flip-box-inner {
+	transform: rotateY(180deg);
+}
+.flip-box-front, .flip-box-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.flip-box-front {
+	background-color: #bbb;
+	color: black;
+}
+.flip-box-front img{
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+.flip-box-back {
+	background-color: #ffae42;
+	color: black;
+	transform: rotateY(180deg);
+}
+.title{
+	color: white;
+	text-align: center;
+	margin-top: 5px;
+	font-size: 20px;
+	font-family: 'Rufina', serif;
+	letter-spacing: 2px;
+}
+.price{
+	margin-top: 5px;
+	color: #F16527;
+	font-size: 20px;
+	font-family: 'Itim',cursive;
+	font-style: italic;
+	text-align: center;
+	margin-left: 10px;
+}
+.toBucket{
+	background-color: #1DFB18 !important;
+	margin-bottom: 5px;
+	width: 100%;
+}
+.contentAboutUs{
+	background-color: #6d6d6d;
+	border-radius: 10px;
+	color: white;
+	padding: 5px;
+}
+.wrapper{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.wrapper img.wrapperItem{
+	width: 500px;
+	height: 300px;
+	border-radius: 10px;
+	border:1px solid white;
+}
+.aboutUs{
+	font-family: 'Courgette', cursive;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 20px;
+}
+.aboutUsText{
+	margin-top: 5px;
+	font-size: 16px;
+	font-family: times;
+}
+.echipaWrapper{
+	display: flex;
+	justify-content: space-between;
+}
+.echipa-item{
+	overflow: hidden;
+	object-fit: contain;
+	width: 300px;
+	height: 350px;
+	border-radius: 10px;
+	border: 1px solid white;
+	font-size: 16px;
+	font-family: 'Itim', cursive;
+	letter-spacing: 0px;
+}
+.echipa-item img.wrapperImg{
+	width: 300px;
+	height: 300px;
+	background-color: white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.contentLivrare{
+	color: white;
+	font-family: Times;
+	font-size: 18px;
+}
+#contactDiv{
+	width: 100%;
+	height: 75px;
+	background-color: #000;
+}
+#contactDiv > .container{
+	height: 75px;
+	color: white;
+	padding-top: 25px;
+
+}
+@media only screen and (max-width: 768px){
+	#logo{
+		width: 180px;
+		height: 130px;
+	}
+	.nav-link{
+		font-size: 16px;
+	}
+	.carousel-inner img{
+		width: 100%;
+		height: 100%;
+	}
+	/*.navbar{	
+		position: relative;
+		background-color: #00d4ff;
+	}
+	/*.navbar::after{
+		content: '';
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background-image: url("../files/bg.png");
+		opacity: 1;
+		background-size: cover;
+	}
+	*/
+	.carousel-control-next-icon,
+	.carousel-control-prev-icon{
+		display: none;
+		width: 20px !important;
+		height: 20px !important;
+	}
+	.nav-link{
+		border-bottom: 0.5px solid black;
+	}
+	.welcomeText{
+		font-size: 16px;
+	}
+	hr{
+		width: 100%;
+	}
+	.cards h3{
+		font-size: 15px;
+	}
+	.cards img{
+		width: 100px;
+		height: auto;
+	}
+	.tagText{
+		color: white;
+		font-size: 24px;
+		font-family: 'Lobster', cursive;
+		letter-spacing: 3px;
+	}
+	.toBucket{
+		margin-bottom: 0;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius: 10px;
+	}
+}

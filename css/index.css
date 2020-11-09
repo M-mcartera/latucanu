@@ -1,0 +1,164 @@
+body{
+	background-color: #1B1A1B;
+	overflow-x: hidden;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: 'SegoePrint';
+	src: url("fonts/911Fonts.com_SegoePrint__-_911fonts.com_fonts_oki4.eot?#") format('eot');/* EOT file for IE */
+}
+.nav{
+	width: 100vw;
+	height: 170px;
+	position: fixed;
+	color: white;
+	z-index: 2;
+}
+.nav:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #1B1A1B;
+	opacity: 50%;	
+}
+.logo{
+	position: absolute;
+	left: 120px;
+	width: 220px;
+	z-index: 1;
+}
+.logo img{
+	width: 100%;
+	height: 100%;
+}
+.text{
+	position: absolute;
+	top: 60px;
+	right: 120px;
+	z-index: 1;
+}
+.text ul li{
+	padding: 20px 20px;
+	display: inline;
+}
+
+.text ul li a{
+	font-family: 'Rufina', serif;
+	font-size: 24px;
+	color: white;
+	text-decoration: none;
+	overflow-x: hidden;
+}
+.text ul li a::before{
+	content: '';
+	position: absolute;
+	width: 0px;
+	height: 2px;
+	bottom: 18px;
+	background-color: black;
+}
+.text ul li a:hover:before{
+	transition: all 0.3s;
+	width: 80px;
+}
+.fa-shopping-bag{
+	font-size: 30px;
+	color: black;
+}
+.active{
+	color: #F16527 !important;
+}
+.imgSlider{
+	width: 100vw;
+	height: auto;
+	position: relative;
+	overflow: hidden;
+	height: 773px;
+}
+
+.arr{
+	width: 80px; 
+	height: 80px; 
+	transition: .3s;  
+	box-shadow: -2px 2px 0 white; 
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+}
+.arrLeft{
+	transform: rotate(45deg);
+	left: 100px;
+}
+.arrRight{
+	transform: rotate(-135deg);
+	right: 112px;
+}
+.arr:hover{
+	box-shadow: -2px 2px 0 black;
+}
+.radiosSlider{
+	position: absolute;
+	bottom: 100px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.radiosSlider input[type="radio"]{
+	margin-left: 10px;
+	background-color: #ccc;
+	appearance:none;
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	background-clip: content-box;
+	cursor: pointer;
+	border:1px solid #7a7a7a;
+}
+.radiosSlider input[type="radio"]:checked {
+  background-color: #2CBFD3;
+}
+.imgSlider img{
+	width: 100%;
+	display: none;
+		object-fit: cover;
+}
+.imgSlider img.activeI{
+	display: inline-block;
+}
+.container{
+	margin-top: 50px;
+	color: white;
+	height: 300px;
+	position: relative;
+}
+.ET{
+	font-family: 'Gamja Flower', cursive;
+	font-style: italic;
+	font-size: 35px;
+}
+.contCards{
+	display: flex;
+	justify-content: space-between;
+}
+.card{
+	margin-top: 80px;
+	width: 255px;
+	height: 325px;
+	border:1px solid white;
+	background-color: #1B1A1B;
+	text-align: center;
+	font-family: Times New Roman;
+	font-size: 16px;
+	border-radius: 10px;
+}
+.img{
+	width: 100%;
+	height: 255px;
+	border-top-right-radius:10px;
+	border-top-left-radius: 10px;
+	background-color: white;
+	z-index: 1;
+}
+.name{
+	margin-top: 5px;
+}
