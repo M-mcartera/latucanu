@@ -31,15 +31,11 @@
 			</div>
 		</div>
 	</nav>
-<!--<div class="checkBag" ng-app="ShoppingList" ng-controller="ShoppingController">
-		<div class="elemCount"><input type="text" id="count"  ng-model="counta"></div>
-		<div class="elemName">Burger TON</div>
-		<div class="elemPrice"><span>{{18 * counta}}</span>RON</div>
-		<div class="elemCount"><input type="text" id="count"  ng-model="countb"></div>
-		<div class="elemName">Burger TON</div>
-		<div class="elemPrice"><span>{{18 * countb}}</span>RON</div>
-	</div>		
--->		
+<div class="checkBag">
+	<div class="elems"></div>
+	<hr>
+	<div class="sum"></div>
+	</div>			
 <div id="slides" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
 		<li data-target="#slides" data-slide-to="0" class="active"></li>
@@ -307,7 +303,7 @@
 			<p class="title">Crispy Mix Box</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">25 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('crispyBox', 1);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Hamsii cu mamaliguta-->
@@ -330,7 +326,7 @@
 			<p class="title">Hamsii</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">15 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('hamsii', 1);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--INELE DE CEAPA-->
@@ -352,7 +348,7 @@
 			<p class="title">Inele de Ceapă</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">18 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('ineleCeapa', 1);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--crispi-box-->
@@ -367,7 +363,7 @@
 			<p class="title">Cartofi Prăjiți</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">6 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('cartofi', 1);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 	</div>

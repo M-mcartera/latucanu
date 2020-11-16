@@ -36,6 +36,18 @@ body{
 	flex-wrap: wrap;
 	box-shadow: 0px 0px 10px 10px #ccc;
 	overflow: hidden;
+	font-family: 'Lobster',cursive;
+	font-size: 20px;
+	letter-spacing: 2px;
+	font-weight: normal;
+}
+.elems{
+	width: 100%;
+	
+}
+.checkBag hr{
+	width: 100%;
+	background-color: black;
 }
 #count{
 	width: 100%;
@@ -44,6 +56,7 @@ body{
 .checkBag div{
 	padding: 10px;
 	display: inline-block;
+	color: black;
 }
 .elem{
 	width: 100%;
@@ -55,12 +68,13 @@ border-bottom: 1px solid blue;
 }
 .elemName{
 	text-align: center;
-	width: 80%;
+	width: 70%;
+	color: black;
 	border-bottom: 1px solid red;
 }
 .elemPrice{
 	text-align: right;
-	width: 10%;
+	width: 20%;
 	border-bottom: 1px solid aqua;
 }
 .navbar{
