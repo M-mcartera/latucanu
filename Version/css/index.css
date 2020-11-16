@@ -23,6 +23,46 @@ body{
 	width: 220px;
 	height: 160px;
 }
+.checkBag{
+	position: fixed;
+	width: 50%;
+	height:auto;
+	top: 25%;
+	left: 25%;
+	z-index: 999;
+	background-color: #ccc;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	box-shadow: 0px 0px 10px 10px #ccc;
+	overflow: hidden;
+}
+#count{
+	width: 100%;
+	text-align: center;
+}
+.checkBag div{
+	padding: 10px;
+	display: inline-block;
+}
+.elem{
+	width: 100%;
+	position: relative;
+}
+.elemCount{
+width: 10%;
+border-bottom: 1px solid blue;
+}
+.elemName{
+	text-align: center;
+	width: 80%;
+	border-bottom: 1px solid red;
+}
+.elemPrice{
+	text-align: right;
+	width: 10%;
+	border-bottom: 1px solid aqua;
+}
 .navbar{
 	z-index: 2;
 	width: 100%;
@@ -134,7 +174,7 @@ body{
 }
 .options{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	flex-wrap: wrap;
 }
 .option-item{
@@ -184,9 +224,18 @@ body{
 	height: 100%;
 }
 .flip-box-back {
+	padding-top: 10px;
 	background-color: #ffae42;
 	color: black;
+	font-family: times;
+	font-weight: bold;
+	letter-spacing: 1px;
 	transform: rotateY(180deg);
+}
+.flip-box-back h2{
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 5px;
 }
 .title{
 	color: white;
@@ -287,6 +336,17 @@ body{
 	.carousel-inner img{
 		width: 100%;
 		height: 100%;
+	}
+	.checkBag{
+		width: 100%;
+		left: 0;
+	}
+	.elemName{
+		width: 70%;
+	}
+	.elemPrice{
+		width: 20%;
+		text-align: left;
 	}
 	/*.navbar{	
 		position: relative;

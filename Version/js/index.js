@@ -6,9 +6,7 @@ $(".bucket").on('click', function(){
 var menuDivpos = $("#menuDiv").offset().top-0.50;
 var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;
 var deliveryDivpos= $("#deliveryDiv").offset().top - 200;
-console.log(deliveryDivpos);
 $(window).scroll(function(){
-	console.log($(window).scrollTop());
 	if($(window).scrollTop() > menuDivpos && $(window).scrollTop()<aboutUsDivpos){
 		$('.nav-item').removeClass('active');
 		$('.nav-item').eq(1).addClass('active');
@@ -26,8 +24,37 @@ $(window).scroll(function(){
 		$('.nav-item').eq(0).addClass('active');
 	}
 });
-var i = 1;
-$(".bucket").attr("data-content",i);
-
-
 });
+var i = 0;
+$(".bucket").attr("data-content",i);
+/*
+function addBucket(n,c){
+	var name = n;
+	var price;
+	var title;
+	var count = 1;
+	i = i +c;
+	switch(name){
+		case 'cartofi':
+			price = 6;
+			title = "Cartofi Prăjiți";
+			break;
+		case 'rulou':
+			price = 18;
+			title = "Inele Ceapă";
+			break;
+		case 'macrou':
+			price = 
+	}
+	console.log(i);
+	$(".bucket").attr("data-content",i);
+
+}
+
+/*
+var app = angular.module('ShoppingList',[]);
+app.controller('ShoppingController',function($scope){
+	$scope.counta = 1;
+	$scope.countb = 1;
+});
+*/
