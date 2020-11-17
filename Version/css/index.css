@@ -57,15 +57,72 @@ body{
 	padding: 10px;
 	display: inline-block;
 	color: black;
+	position: relative;
 }
 .elem{
 	width: 100%;
 	position: relative;
 }
 .elemCount{
+	text-align: center;
 width: 10%;
 border-bottom: 1px solid blue;
 }
+.elemCount > .rightSpan{
+		font-family: times;
+	position: absolute;
+	width: 30%;
+	height: 80%;
+	background-color: blue;
+	top: 10%;
+	text-align: center;
+	padding-top: 5%;
+	padding-left: 5%;
+	cursor: pointer;
+	content: "";
+	right: 0%;
+	color: white;
+	z-index: 999;
+}
+.elemCount > .leftSpan{
+	font-family: times;
+	position: absolute;
+	width: 30%;
+	height: 80%;
+	background-color: blue;
+	top: 0%;
+	text-align: center;
+	padding-top: 15%;
+	cursor: pointer;
+	content: "";
+	left: 0%;
+	color: white;
+	z-index: 999;
+}
+/*
+.elemCount::before,
+.elemCount::after{
+	font-family: times;
+	position: absolute;
+	width: 30%;
+	height: 100%;
+	background-color: blue;
+	top: 0%;
+	text-align: center;
+	padding-top: 15%;
+	cursor: pointer;
+}
+.elemCount::before{
+	left: 0%;
+	content: "-";
+	color: white;
+}
+.elemCount::after{
+	content: "+";
+	right: 0%;
+	color: white;
+}
+*/
 .elemName{
 	text-align: center;
 	width: 70%;

@@ -109,9 +109,18 @@ var sum = 0;
 $('.sum').append(sum);
 function append(price,title,c){
 	sum = sum + price;
-	var $elemcount = $("<div class='elemCount'>"+c+"	</div>"),
-	$elemname = $("<div class='elemName'>" + title + "</div>"),
-	$elemprice = $("<div class='elemPrice'>"+price+" RON</div>");
+	var leftSpan = $("<span class='leftSpan'>-</span>");
+	var rightSpan = $("<span class='rightSpan'>+</span>");
+	rightSpan.click(function(){
+		var c =	$(this).parent().html().charAt(0);
+		var z = parseInt(c);
+		z = z+1;
+		z = z.toString();
+	});
+	var $elemcount = $("<div class='elemCount'>"+c+"</div>");
+	$elemcount.append(leftSpan,rightSpan);
+	var $elemname = $("<div class='elemName'>" + title + "</div>");
+	var $elemprice = $("<div class='elemPrice'>"+price+" RON</div>");
 	$('.elems').append($elemcount,$elemname,$elemprice);
 	
 	$('.sum').html(sum + " RON");

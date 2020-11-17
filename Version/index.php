@@ -32,7 +32,9 @@
 		</div>
 	</nav>
 <div class="checkBag">
-	<div class="elems"></div>
+	<div class="elems">
+		
+	</div>
 	<hr>
 	<div class="sum"></div>
 	</div>			
