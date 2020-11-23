@@ -111,18 +111,49 @@ function append(price,title,c){
 	sum = sum + price;
 	var leftSpan = $("<span class='leftSpan'>-</span>");
 	var rightSpan = $("<span class='rightSpan'>+</span>");
+	var countSpan = $("<span class='countSpan'></span>");
+	countSpan.html("1");
+	var z;
 	rightSpan.click(function(){
-		var c =	$(this).parent().html().charAt(0);
-		var z = parseInt(c);
+		var c =	$(this).parent().find('.countSpan').html();
+		z = parseInt(c);
 		z = z+1;
-		z = z.toString();
+		countSpan.html(z);
+		var newPrice = price * z;
+		$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
+		sum = sum + price;
+		setSum(sum);
 	});
-	var $elemcount = $("<div class='elemCount'>"+c+"</div>");
-	$elemcount.append(leftSpan,rightSpan);
+	leftSpan.click(function(){
+		var c =	$(this).parent().find('.countSpan').html();
+		z = parseInt(c);
+		if(z-1 <1){
+			z = 1;
+		}
+		else{
+			z = z-1;
+					sum = sum - price;
+		setSum(sum);
+		}
+		countSpan.html(z);
+		var newPrice = price * z;
+		$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
+
+	});
+	price = price * parseInt(countSpan.html());
+	var $elem = $("<div class='elem'></div>");
+	var $elemcount = $("<div class='elemCount'></div>");
+	$elemcount.append(leftSpan,countSpan,rightSpan);
 	var $elemname = $("<div class='elemName'>" + title + "</div>");
 	var $elemprice = $("<div class='elemPrice'>"+price+" RON</div>");
-	$('.elems').append($elemcount,$elemname,$elemprice);
+	$elem.append($elemcount,$elemname,$elemprice);
+	$('.elems').append($elem);
+//	$('.elems').append($elemcount,$elemname,$elemprice);
 	
+//	$('.sum').html(sum + " RON");
+	setSum(sum);
+}
+function setSum(sum){
 	$('.sum').html(sum + " RON");
 }
 /*
