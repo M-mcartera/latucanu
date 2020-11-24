@@ -27,7 +27,6 @@ $(document).ready(function(){
 });
 var i = 0;
 $(".bucket").attr("data-content",i);
-var counterClick = 0;
 function addBucket(n,c){
 	var name = n;
 	var price;
@@ -37,13 +36,11 @@ function addBucket(n,c){
 		case 'burgerTon':
 		price = 25;
 		title = "Burger Ton";
-		counterClick++;
 		append(price,title,c);
 		break;
 		case 'burgerCreveti':
 		price = 25;
 		title = "Burger Creveti";
-		counterClick++;
 		append(price,title,c);
 		break;
 		case 'sendfish':
@@ -108,58 +105,74 @@ function addBucket(n,c){
 var sum = 0;
 $('.sum').append(sum);
 function append(price,title,c){
-	sum = sum + price;
-	var leftSpan = $("<span class='leftSpan'>-</span>");
-	var rightSpan = $("<span class='rightSpan'>+</span>");
-	var countSpan = $("<span class='countSpan'></span>");
-	countSpan.html("1");
-	var z;
-	rightSpan.click(function(){
-		var c =	$(this).parent().find('.countSpan').html();
-		z = parseInt(c);
-		z = z+1;
-		countSpan.html(z);
-		var newPrice = price * z;
-		$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
+	var execute = true;
+	if($('.elem').length !== 0){
+		$('.elemName').each(function(){
+			if($(this).html() == title){
+				var existingCount = $(this).parent().find('.countSpan').html();
+				existingCount = parseInt(existingCount);
+				existingCount++;
+				$(this).parent().find('.countSpan').html(existingCount);
+				var newPrice = price * existingCount;
+				$(this).parent().find('.elemPrice').html(newPrice + " RON");
+				sum = sum + price;
+				setSum(sum);
+				execute = false;
+			}
+		});
+	}
+	if(execute){
 		sum = sum + price;
-		setSum(sum);
-	});
-	leftSpan.click(function(){
-		var c =	$(this).parent().find('.countSpan').html();
-		z = parseInt(c);
-		if(z-1 <1){
-			z = 1;
-		}
-		else{
-			z = z-1;
-					sum = sum - price;
-		setSum(sum);
-		}
-		countSpan.html(z);
-		var newPrice = price * z;
-		$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
+		var leftSpan = $("<span class='leftSpan'>-</span>");
+		var rightSpan = $("<span class='rightSpan'>+</span>");
+		var countSpan = $("<span class='countSpan'></span>");
+		countSpan.html("1");
+		var z;
+		rightSpan.click(function(){
+			var c =	$(this).parent().find('.countSpan').html();
+			z = parseInt(c);
+			z = z+1;
+			countSpan.html(z);
+			var newPrice = price * z;
+			$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
+			sum = sum + price;
+			setSum(sum);
+		});
+		leftSpan.click(function(){
+			var c =	$(this).parent().find('.countSpan').html();
+			z = parseInt(c);
+			if(z-1 <1){
+				z = 0;
+				$(this).parent().parent().remove();
+				sum = 0;
+				setSum(sum);
+			}
+			else{
+				z = z-1;
+				sum = sum - price;
+				setSum(sum);
+			}
+			countSpan.html(z);
+			var newPrice = price * z;
+			$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
 
-	});
-	price = price * parseInt(countSpan.html());
-	var $elem = $("<div class='elem'></div>");
-	var $elemcount = $("<div class='elemCount'></div>");
-	$elemcount.append(leftSpan,countSpan,rightSpan);
-	var $elemname = $("<div class='elemName'>" + title + "</div>");
-	var $elemprice = $("<div class='elemPrice'>"+price+" RON</div>");
-	$elem.append($elemcount,$elemname,$elemprice);
-	$('.elems').append($elem);
-//	$('.elems').append($elemcount,$elemname,$elemprice);
-	
-//	$('.sum').html(sum + " RON");
-	setSum(sum);
+		});
+		price = price * parseInt(countSpan.html());
+		var $elem = $("<div class='elem'></div>");
+		var $elemcount = $("<div class='elemCount'></div>");
+		$elemcount.append(leftSpan,countSpan,rightSpan);
+		var $elemname = $("<div class='elemName'>" + title + "</div>");
+		var $elemprice = $("<div class='elemPrice'>"+price+" RON</div>");
+		$elem.append($elemcount,$elemname,$elemprice);
+		$('.elems').append($elem);
+
+setSum(sum);
+}
 }
 function setSum(sum){
 	$('.sum').html(sum + " RON");
 }
-/*
-var app = angular.module('ShoppingList',[]);
-app.controller('ShoppingController',function($scope){
-	$scope.counta = 1;
-	$scope.countb = 1;
-});
-*/
+function checkList(name){
+	console.log(name);
+}
+
