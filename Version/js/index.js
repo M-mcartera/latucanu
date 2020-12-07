@@ -1,7 +1,8 @@
 
 $(document).ready(function(){
-	$(".bucket").on('click', function(){
-		$(".dropdown-menu").toggle();
+	$(".bucket").on('click', function(event){
+		event.preventDefault();
+		$(".checkBag").toggle();
 	});
 	var menuDivpos = $("#menuDiv").offset().top-0.50;
 	var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;
@@ -31,7 +32,9 @@ function addBucket(n,c){
 	var name = n;
 	var price;
 	var title;
-	i = i +c;
+	var z = $('.bucket').attr("data-content");
+	z = parseInt(z);
+	z = z+c;
 	switch(name){
 		case 'burgerTon':
 		price = 25;
@@ -99,8 +102,7 @@ function addBucket(n,c){
 		append(price,title,c);
 		break;
 	}
-	$(".bucket").attr("data-content",i);
-
+	$(".bucket").attr("data-content",z);
 }
 var sum = 0;
 $('.sum').append(sum);
@@ -137,6 +139,10 @@ function append(price,title,c){
 			$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
 			sum = sum + price;
 			setSum(sum);
+			var bucketCount = $(".bucket").attr("data-content");
+			bucketCount = parseInt(bucketCount);
+			bucketCount++;
+			$(".bucket").attr("data-content",bucketCount);
 		});
 		leftSpan.click(function(){
 			var c =	$(this).parent().find('.countSpan').html();
@@ -144,7 +150,7 @@ function append(price,title,c){
 			if(z-1 <1){
 				z = 0;
 				$(this).parent().parent().remove();
-				sum = 0;
+				sum = sum-price;
 				setSum(sum);
 			}
 			else{
@@ -152,6 +158,10 @@ function append(price,title,c){
 				sum = sum - price;
 				setSum(sum);
 			}
+							var bucketCount = $(".bucket").attr("data-content");
+				bucketCount = parseInt(bucketCount);
+				bucketCount--;
+				$(".bucket").attr("data-content",bucketCount);
 			countSpan.html(z);
 			var newPrice = price * z;
 			$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");

@@ -26,7 +26,7 @@
 					<li class="nav-item"><a href="#menuDiv" class="nav-link">Menu</a></li>
 					<li class="nav-item"><a href="#aboutUsDiv" class="nav-link">About Us</a></li>
 					<li class="nav-item"><a href="#deliveryDiv" class="nav-link">Delivery</a></li>
-					<li class="nav-item" data-toggle="dropdown"><a href="#" class="nav-link"><i class="fas fa-shopping-bag bucket"></i></a></li>
+					<li class="nav-item"><a class="nav-link"><i class="fas fa-shopping-bag bucket"></i></a></li>
 				</ul>
 			</div>
 		</div>
@@ -37,6 +37,19 @@
 	</div>
 	<hr>
 	<div class="sum"></div>
+	<hr>
+	<form action="#" id="form">
+		<input type="text" placeholder="Nume:" pattern="[A-Za-z]{3,}" name="nume" required="required">
+		<br>
+		<input type="text" placeholder="Prenume:" pattern="[A-Za-z]{3,}" name="prenume" required="required">
+		<br>
+		<input type="tel" pattern="[0-9]{10}" name="phone" placeholder="0798765432" required="required">
+		<br>
+		<button type="submit">submit</button>
+	</form>
+	<div class="buyButton">
+		<button>Cumpără</button>
+	</div>
 	</div>			
 <div id="slides" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
