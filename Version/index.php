@@ -32,13 +32,15 @@
 		</div>
 	</nav>
 <div class="checkBag">
-	<div class="elems">
-		
-	</div>
+	<span class="bucketCloseBtn"><i class="fas fa-times-circle"></i></span>
+	<br><br>
+	<div class="elems"></div>
 	<hr>
-	<div class="sum"></div>
-	<hr>
+	<div class="sum">Total: 0 RON</div>
+	<div class="submitButton">Submit order</div>
+	<div class="clearButton">Clear all</div>
 	<form action="#" id="form">
+			<hr>
 		<input type="text" placeholder="Nume:" pattern="[A-Za-z]{3,}" name="nume" required="required">
 		<br>
 		<input type="text" placeholder="Prenume:" pattern="[A-Za-z]{3,}" name="prenume" required="required">
@@ -47,9 +49,6 @@
 		<br>
 		<button type="submit">submit</button>
 	</form>
-	<div class="buyButton">
-		<button>Cumpără</button>
-	</div>
 	</div>			
 <div id="slides" class="carousel slide" data-ride="carousel">
 	<ul class="carousel-indicators">
@@ -472,6 +471,7 @@
 		</div>
 	</div>
 </div>
+<div class="alert alert-succes">Produsul a fost adaugat cu succes!</div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="

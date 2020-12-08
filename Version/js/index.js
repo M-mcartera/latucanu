@@ -2,7 +2,30 @@
 $(document).ready(function(){
 	$(".bucket").on('click', function(event){
 		event.preventDefault();
-		$(".checkBag").toggle();
+		$(".checkBag").fadeIn(300);
+		$('.container').each(function(){
+			$(this).css("filter","blur(10px)").css("pointer-events","none");
+		});
+		$('.navbar').css("filter","blur(10px)").css("pointer-events", "none");
+		$('#slides').css("filter","blur(10px)").css("pointer-events","none");
+	});
+	$(".bucketCloseBtn").on('click',function(){
+		$(".checkBag").fadeOut(300);
+		$('.container').each(function(){
+			$(this).css("filter","blur(0px)").css("pointer-events","auto");
+		});
+		$('.navbar').css("filter","blur(0px)").css("pointer-events", "auto");
+		$('#slides').css("filter","blur(0px)").css("pointer-events","auto");
+	});
+	$(".submitButton").on("click",function(){
+		$("#form").slideDown(200);
+	})
+	$(".clearButton").on("click",function(){
+		$(".elems").empty();
+		$('.elems').css("height","auto");
+		$(".bucket").attr("data-content",0);
+		sum = 0;
+		setSum(0);
 	});
 	var menuDivpos = $("#menuDiv").offset().top-0.50;
 	var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;
@@ -103,9 +126,16 @@ function addBucket(n,c){
 		break;
 	}
 	$(".bucket").attr("data-content",z);
+	if($('.elem').length>=3){
+		$('.elems').css('height','200px');
+	}
+	$(".alert").slideDown(150);
+	setTimeout(function(){
+		$(".alert").slideUp(150);
+	},1000);
 }
 var sum = 0;
-$('.sum').append(sum);
+$('.sum').html("Total: "+sum+" RON");
 function append(price,title,c){
 	var execute = true;
 	if($('.elem').length !== 0){
@@ -125,8 +155,8 @@ function append(price,title,c){
 	}
 	if(execute){
 		sum = sum + price;
-		var leftSpan = $("<span class='leftSpan'>-</span>");
-		var rightSpan = $("<span class='rightSpan'>+</span>");
+		var leftSpan = $("<span class='leftSpan'><i class='far fa-minus-square'></i></span>");
+		var rightSpan = $("<span class='rightSpan'><i class='far fa-plus-square'></i></span>");
 		var countSpan = $("<span class='countSpan'></span>");
 		countSpan.html("1");
 		var z;
@@ -147,6 +177,10 @@ function append(price,title,c){
 		leftSpan.click(function(){
 			var c =	$(this).parent().find('.countSpan').html();
 			z = parseInt(c);
+			var l = $('.elem').length;
+			if(l-1<3){
+				$('.elems').css("height","auto");
+			}
 			if(z-1 <1){
 				z = 0;
 				$(this).parent().parent().remove();
@@ -158,10 +192,10 @@ function append(price,title,c){
 				sum = sum - price;
 				setSum(sum);
 			}
-							var bucketCount = $(".bucket").attr("data-content");
-				bucketCount = parseInt(bucketCount);
-				bucketCount--;
-				$(".bucket").attr("data-content",bucketCount);
+			var bucketCount = $(".bucket").attr("data-content");
+			bucketCount = parseInt(bucketCount);
+			bucketCount--;
+			$(".bucket").attr("data-content",bucketCount);
 			countSpan.html(z);
 			var newPrice = price * z;
 			$(this).parent().parent().find('.elemPrice').html(newPrice + " RON");
@@ -176,11 +210,11 @@ function append(price,title,c){
 		$elem.append($elemcount,$elemname,$elemprice);
 		$('.elems').append($elem);
 
-setSum(sum);
-}
+		setSum(sum);
+	}
 }
 function setSum(sum){
-	$('.sum').html(sum + " RON");
+	$('.sum').html("Total: "+sum+" RON");
 }
 function checkList(name){
 	console.log(name);

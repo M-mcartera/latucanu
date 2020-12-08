@@ -26,14 +26,14 @@ body{
 .checkBag{
 	position: fixed;
 	width: 50%;
+	border-radius: 10px;
 	height:auto;
-	top: 25%;
+	top: 15%;
 	left: 25%;
 	z-index: 999;
-	background-color: #ccc;
+	background-color: white;
 	padding: 10px;
 	display: none;
-	box-shadow: 0px 0px 10px 10px #ccc;
 	overflow: hidden;
 	font-family: 'Lobster',cursive;
 	font-size: 20px;
@@ -41,11 +41,41 @@ body{
 	font-weight: normal;
 	cursor: pointer;
 }
+.countSpan{
+	text-align: center;
+}
+span.bucketCloseBtn{
+	width: auto;
+	height: auto;
+	position: absolute !important;
+	right: 10px;
+	top: 10px;
+}
 .elems{
 	width: 100%;
-		display: flex;
+	display: flex;
 	flex-wrap: wrap;
+	overflow-x: hidden;
 	
+}
+#form{
+	display: none;
+}
+.sum,
+.clearButton,
+.submitButton{
+	width: 30%;
+	display: inline;
+	margin-left: 10px;
+	text-align: center;
+}
+.clearButton{
+	background-color: #a70000;
+	border-radius: 10px;
+}
+.submitButton{
+	background-color: #5cb85c;
+	border-radius: 10px;
 }
 .checkBag hr{
 	width: 100%;
@@ -67,40 +97,44 @@ body{
 }
 .elemCount{
 	text-align: center;
-width: 10%;
-border-bottom: 1px solid blue;
+	width: 10%;
+	border-bottom: 1px solid blue;
 }
 .elemCount > .rightSpan{
-		font-family: times;
+	font-family: times;
 	position: absolute;
 	width: 30%;
 	height: 80%;
-	background-color: blue;
-	top: 10%;
+	color: #2d0c11;
+	top: 15%;
 	text-align: center;
 	padding-top: 5%;
 	padding-left: 5%;
 	cursor: pointer;
 	content: "";
 	right: 0%;
-	color: white;
+	font-weight: bolder;
 	z-index: 999;
 }
 .elemCount > .leftSpan{
 	font-family: times;
 	position: absolute;
-	width: 30%;
-	height: 80%;
-	background-color: blue;
-	top: 10%;
+	width: auto;
+	height: auto;
+	color: #2d0c11;
+	top: 15%;
 	text-align: center;
 	padding-top: 5%;
 	padding-left: 5%;
 	cursor: pointer;
 	content: "";
 	left: 0%;
-	color: white;
 	z-index: 999;
+}
+.elemCount > .leftSpan:hover,
+.elemCount > .rightSpan:hover{
+	color: blue;
+	transition: all 0.2s;
 }
 /*
 .elemCount::before,
@@ -367,6 +401,10 @@ border-bottom: 1px solid blue;
 	margin-bottom: 5px;
 	width: 100%;
 }
+.toBucket:hover{
+	color: black !important;
+	transition: all 0.3s ease;
+}
 .contentAboutUs{
 	background-color: #6d6d6d;
 	border-radius: 10px;
@@ -432,6 +470,19 @@ border-bottom: 1px solid blue;
 	color: white;
 	padding-top: 25px;
 
+}
+.alert{
+	background-color: #d4edda;
+	position: fixed;
+	top: 10px;
+	width: 30%;
+	text-align: center;
+	font-family: times;
+	font-size: 16pt;
+	z-index: 9999;
+	left: 35%;
+	color: green;
+	display: none;
 }
 @media only screen and (max-width: 768px){
 	#logo{
