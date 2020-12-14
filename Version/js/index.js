@@ -3,6 +3,7 @@ $(document).ready(function(){
 	$(".bucket").on('click', function(event){
 		event.preventDefault();
 		$(".checkBag").fadeIn(300);
+		$(".sosuri").css("transform","translateX(0%)");
 		$('.container').each(function(){
 			$(this).css("filter","blur(10px)").css("pointer-events","none");
 		});
@@ -11,6 +12,7 @@ $(document).ready(function(){
 	});
 	$(".bucketCloseBtn").on('click',function(){
 		$(".checkBag").fadeOut(300);
+		$(".sosuri").css("transform","translateX(-150%)");
 		$('.container').each(function(){
 			$(this).css("filter","blur(0px)").css("pointer-events","auto");
 		});
@@ -124,6 +126,27 @@ function addBucket(n,c){
 		title = "Cartofi Prajiti";
 		append(price,title,c);
 		break;
+		case 'sos ketchup':
+		price = 2;
+		title = "Extra Sos Ketchup";
+		append(price,title,c);
+		break;
+		case 'sos sweetchilli':
+		price = 2;
+		title = "Extra Sos Sweet Chilli";
+		append(price,title,c);
+		break;
+		case 'sos mujdei':
+		price = 2;
+		title = "Extra Sos Mujdei";
+		append(price,title,c);
+		break;
+		case 'sos sostucanu':
+		price = 2;
+		title = "Extra Sos Tucanu";
+		append(price,title,c);
+		break;
+
 	}
 	$(".bucket").attr("data-content",z);
 	if($('.elem').length>=3){
@@ -219,4 +242,6 @@ function setSum(sum){
 function checkList(name){
 	console.log(name);
 }
+function addSos(sos){
 
+}

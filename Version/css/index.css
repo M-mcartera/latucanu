@@ -41,8 +41,42 @@ body{
 	font-weight: normal;
 	cursor: pointer;
 }
+.sosuri{
+	transform: translateX(-150%);
+	transition: all 0.5s ease;
+}
 .countSpan{
 	text-align: center;
+}
+.elemSos{
+	margin-left: 30px;
+	border: 1px solid black;
+	border-radius: 5px;
+	box-sizing: border-box !important;
+
+}
+.elemSos:hover{
+	background-color: #fff;
+	color: red;
+	border: none;
+	transition:all 0.3s ease;
+}
+.ketchup{
+	background-color: #b21807;
+}
+.mujdei{
+	background-color:#fcfcf4;
+}
+.sweetchilli{
+	background-color: #990000;
+}
+.sostucanu{
+	background-color: #ff6666;
+}
+.revSos{
+	margin-left: 10px;
+	font-size: 12pt;
+	color: black;
 }
 span.bucketCloseBtn{
 	width: auto;
@@ -131,8 +165,8 @@ span.bucketCloseBtn{
 	left: 0%;
 	z-index: 999;
 }
-.elemCount > .leftSpan:hover,
-.elemCount > .rightSpan:hover{
+.leftSpan:hover,
+.rightSpan:hover{
 	color: blue;
 	transition: all 0.2s;
 }

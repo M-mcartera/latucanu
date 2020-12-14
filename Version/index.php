@@ -36,6 +36,14 @@
 	<br><br>
 	<div class="elems"></div>
 	<hr>
+	<span class="SosTag">Sos:</span><i class="fas fa-caret-right revSos"></i> 
+	<div class="sosuri">
+		<div class="elemSos ketchup" onclick="addBucket('sos ketchup',1)">Ketchup</div>
+		<div class="elemSos sweetchilli" onclick="addBucket('sos sweetchilli',1)">Sweet Chilli</div>
+		<div class="elemSos mujdei" onclick="addBucket('sos mujdei',1)">Mujdei</div>
+		<div class="elemSos sostucanu" onclick="addBucket('sos sostucanu',1)">Sos Țucanu</div>
+	</div>
+	<hr>
 	<div class="sum">Total: 0 RON</div>
 	<div class="submitButton">Submit order</div>
 	<div class="clearButton">Clear all</div>
