@@ -47,7 +47,7 @@
 	<div class="sum">Total: 0 RON</div>
 	<div class="submitButton">Submit order</div>
 	<div class="clearButton">Clear all</div>
-	<form action="#" id="form">
+	<form action="server/submitOrder.php" method="POST" id="form">
 			<hr>
 		<input type="text" placeholder="Nume:" pattern="[A-Za-z]{3,}" name="nume" required="required">
 		<br>
