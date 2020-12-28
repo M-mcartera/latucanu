@@ -28,7 +28,7 @@ body{
 	width: 50%;
 	border-radius: 10px;
 	height:auto;
-	top: 15%;
+	top: 5%;
 	left: 25%;
 	z-index: 999;
 	background-color: white;
@@ -298,6 +298,7 @@ span.bucketCloseBtn{
 }
 #form input{
 	padding-left: 10px;
+	text-transform: capitalize;
 
 }
 #form input,button{
@@ -517,7 +518,6 @@ span.bucketCloseBtn{
 
 }
 .alert{
-	background-color: #d4edda;
 	position: fixed;
 	top: 10px;
 	width: 30%;
@@ -526,7 +526,15 @@ span.bucketCloseBtn{
 	font-size: 16pt;
 	z-index: 9999;
 	left: 35%;
-	color: green;
+}
+.alert-succes{
+	background-color: #d4edda;
+		color: green;
+	display: none;
+}
+.alert-danger{
+	background-color: #a94442;
+	color: black;
 	display: none;
 }
 @media only screen and (max-width: 768px){

@@ -29,6 +29,36 @@ $(document).ready(function(){
 		sum = 0;
 		setSum(0);
 	});
+	$('#SubmitOrderBtn').on('click', function(e){
+		e.preventDefault();
+		var nume = $("#nume").val().trim();
+		var prenume = $("#prenume").val().trim();
+		var phone = $("#phone").val().trim();
+		var phoneTrue = (/[0-9]{10}/.test(phone));
+		if(nume.length >=3  && prenume.length >= 3 && phoneTrue){
+			if($('.elem').length == 0){
+				$('.alert-danger').html("Nu este nici un element adaugat in cos");
+				$(".alert-danger").slideDown(150);
+				setTimeout(function(){
+					$(".alert-danger").slideUp(150);
+				},1000);
+			}
+			else{
+				var value = {nume: nume, prenume: prenume, phone: phone};
+				$.post("../server/submit.php", value, function(data){
+					console.log("Data returned "+data);
+				});
+
+			}
+		}
+		else{
+			$('.alert-danger').html("Datele Introduse sunt incorecte");
+			$(".alert-danger").slideDown(150);
+			setTimeout(function(){
+				$(".alert-danger").slideUp(150);
+			},1000);
+		}
+	});
 	var menuDivpos = $("#menuDiv").offset().top-0.50;
 	var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;
 	var deliveryDivpos= $("#deliveryDiv").offset().top - 200;
@@ -152,9 +182,9 @@ function addBucket(n,c){
 	if($('.elem').length>=3){
 		$('.elems').css('height','200px');
 	}
-	$(".alert").slideDown(150);
+	$(".alert-succes").slideDown(150);
 	setTimeout(function(){
-		$(".alert").slideUp(150);
+		$(".alert-succes").slideUp(150);
 	},1000);
 }
 var sum = 0;
@@ -238,10 +268,4 @@ function append(price,title,c){
 }
 function setSum(sum){
 	$('.sum').html("Total: "+sum+" RON");
-}
-function checkList(name){
-	console.log(name);
-}
-function addSos(sos){
-
 }
