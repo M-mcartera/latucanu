@@ -119,7 +119,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Buger Ton</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">25 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('burgerTon', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(0);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--burger creveti-->
@@ -145,7 +145,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Burger Creveți</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">25 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('burgerCreveti', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(1);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--sendfish-->
@@ -168,7 +168,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Sendfish</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">9 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('sendfish', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(2);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--FISH AND CHIPS-->
@@ -191,7 +191,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Fish & Chips</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">26 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('fishChips', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(3);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Fish fingers-->
@@ -213,7 +213,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Fish Fingers</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">18 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('fishFingers', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(4);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Midii pane-->
@@ -236,7 +236,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Midii Pane</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">14 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('midii', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(5);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--INELE-CALAMAR-->
@@ -259,7 +259,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Inele Calamar</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">17 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('ineleCalamar', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(6);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Rulou somon-->
@@ -284,7 +284,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Rulou Somon</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">25 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('rulouSomon', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(7);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--hot dog somon-->
@@ -308,7 +308,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Hot Dog Somon</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">10 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('somonDog', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(8);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Crispy mix box-->
@@ -332,7 +332,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Crispy Mix Box</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">25 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('crispyBox', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(9);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--Hamsii cu mamaliguta-->
@@ -355,7 +355,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Hamsii</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">15 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('hamsii', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(10);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--INELE DE CEAPA-->
@@ -377,7 +377,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Inele de Ceapă</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">18 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('ineleCeapa', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(11);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 		<!--crispi-box-->
@@ -392,7 +392,7 @@ $_SESSION['user'] = $user;
 			<p class="title">Cartofi Prăjiți</p>
 			<div class="row text-center">
 				<div class="col-sm-4 price">6 RON</div>
-				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket('cartofi', 1);"><i class="fas fa-shopping-cart"></i></button></div>
+				<div class="col-sm-6"><button class="btn btn-secondary toBucket" onclick="addBucket(12);"><i class="fas fa-shopping-cart"></i></button></div>
 			</div>
 		</div>
 	</div>

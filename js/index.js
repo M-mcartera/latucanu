@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	$(".bucket").on('click', function(event){
 		event.preventDefault();
@@ -41,10 +40,10 @@ $(document).ready(function(){
 			var n = $(this).find(".elemName").html();
 			var p = $(this).find(".elemPrice").html();
 			p = p.replace(" RON","");
-			var temp = {name:oleg,prenume:sosi};
+			var temp = {name:"oleg",prenume:"sosi"};
 			console.log(temp);
 		});
-		/*if(nume.length >=3  && prenume.length >= 3 && phoneTrue){
+		if(nume.length >=3  && prenume.length >= 3 && phoneTrue){
 			if(eC == 0){
 				$('.alert-danger').html("Nu este nici un element adaugat in cos");
 				$(".alert-danger").slideDown(150);
@@ -53,11 +52,7 @@ $(document).ready(function(){
 				},1000);
 			}
 			else{
-				var value = {nume: nume, prenume: prenume, phone: phone, elementsNr: eC};
-				$.post("../server/submit.php", value, function(data){
-					console.log("Data returned "+data);
-				});
-
+				//submit order SUCCESFUL
 			}
 		}
 		else{
@@ -66,7 +61,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				$(".alert-danger").slideUp(150);
 			},1000);
-		}*/
+		}
 	});
 	var menuDivpos = $("#menuDiv").offset().top-0.50;
 	var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;
@@ -92,6 +87,67 @@ $(document).ready(function(){
 });
 var i = 0;
 $(".bucket").attr("data-content",i);
+
+var MenuElems=[
+{id:0,name:"Burger Ton",price:25},
+{id:1,name:"Burger Creveti",price:25},
+{id:2,name:"Sendfish",price:9},
+{id:3,name:"Fish & Chips",price:26},
+{id:4,name:"Fish Fingers",price:18},
+{id:5,name:"Midii Pane",price:18},
+{id:6,name:"Inele Calamar",price:17},
+{id:7,name:"Rulou Somon",price:25},
+{id:8,name:"Hot Dog Somon",price:10},
+{id:9,name:"Crispy Mix Box",price:25},
+{id:10,name:"Hamsii",price:15},
+{id:11,name:"Inele de Ceapa",price:18},
+{id:12,name:"Cartofi Prajiti",price:6}
+];
+
+var userList = [];
+var sum = 0;
+function addBucket(id){
+	//bag corect elementele in userList array
+	var exec = true;
+	for(var x = 0;x<userList.length;x++){
+		if(userList[x].elem.id == id){
+			userList[x].count = userList[x].count + 1;
+			exec = false;	
+			update(id);
+		}
+	}
+	if(exec){
+		var temp = {elem:MenuElems[id],count:1};
+		userList.push(temp);
+		init();
+	}
+}
+function init(){
+	var total = $('.elem').length;	
+		var leftSpan = $("<span class='leftSpan'><i class='far fa-minus-square'></i></span>");
+		var rightSpan = $("<span class='rightSpan'><i class='far fa-plus-square'></i></span>");
+		var countSpan = $("<span class='countSpan'></span>");
+		var $elem = $("<div class='elem'></div>");
+		var $elemcount = $("<div class='elemCount'></div>");
+		$elemcount.append(leftSpan,countSpan,rightSpan);
+		var $elemname = $("<div class='elemName'></div>");
+		var $elemprice = $("<div class='elemPrice'></div>");
+		$elem.append($elemcount,$elemname,$elemprice);
+		$('.elems').append($elem);
+		countSpan.html(userList[total].count);
+		$elemname.html(userList[total].elem.name);
+		sum += userList[total].count * userList[total].elem.price;
+		$elemprice.html(userList[total].count * userList[total].elem.price + "RON");
+		setSum(sum);
+}
+
+
+
+function setSum(sum){
+	$('.sum').html("Total: "+sum+" RON");
+}
+
+/*
 function addBucket(n,c){
 	var name = n;
 	var price;
@@ -185,8 +241,7 @@ function addBucket(n,c){
 		title = "Extra Sos Tucanu";
 		append(price,title,c);
 		break;
-
-	}
+}
 	$(".bucket").attr("data-content",z);
 	if($('.elem').length>=3){
 		$('.elems').css('height','200px');
@@ -196,11 +251,16 @@ function addBucket(n,c){
 		$(".alert-succes").slideUp(150);
 	},1000);
 }
+*/
+/*
 var sum = 0;
 $('.sum').html("Total: "+sum+" RON");
+
+
 function append(price,title,c){
 	var execute = true;
 	if($('.elem').length !== 0){
+		//exista deja un element si se modifica pretul si cantitatea
 		$('.elemName').each(function(){
 			if($(this).html() == title){
 				var existingCount = $(this).parent().find('.countSpan').html();
@@ -216,6 +276,7 @@ function append(price,title,c){
 		});
 	}
 	if(execute){
+		//nu exista nici un element, deabia se creaza
 		sum = sum + price;
 		var leftSpan = $("<span class='leftSpan'><i class='far fa-minus-square'></i></span>");
 		var rightSpan = $("<span class='rightSpan'><i class='far fa-plus-square'></i></span>");
@@ -275,6 +336,5 @@ function append(price,title,c){
 		setSum(sum);
 	}
 }
-function setSum(sum){
-	$('.sum').html("Total: "+sum+" RON");
-}
+
+*/
