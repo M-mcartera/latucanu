@@ -104,6 +104,13 @@ var MenuElems=[
 {id:12,name:"Cartofi Prajiti",price:6}
 ];
 
+
+
+
+
+
+
+/*
 var userList = [];
 var sum = 0;
 function addBucket(id){
