@@ -108,8 +108,32 @@ var MenuElems=[
 
 
 
-
-
+	var a = [];
+	const now = new Date();
+function addBucket(id){
+	a = JSON.parse(localStorage.getItem('userList')) || [];
+	const item = {
+		value : MenuElems[id],
+		expira: now.getTime() + 5000,
+	}
+	a.push(item);
+	alert(a);
+	localStorage.setItem('userList', JSON.stringify(a));
+}
+function getData(){
+	a = JSON.parse(localStorage.getItem('userList'));
+	if(a[0].expira < now.getTime()){
+		console.log('expirat');
+	}
+}
+function afisare(){
+	for(var i = 0;i<a.length;i++){
+		console.log(a[i].name);
+	}
+}
+function rmStorage(){
+	localStorage.clear();
+}
 /*
 var userList = [];
 var sum = 0;

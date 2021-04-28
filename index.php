@@ -36,7 +36,6 @@ $_SESSION['user'] = $user;
 					<li class="nav-item"><a class="nav-link"><i class="fas fa-shopping-bag bucket"></i></a></li>
 				</ul>
 			</div>
-			<div><li></li></div>
 		</div>
 	</nav>
 <div class="checkBag">
