@@ -62,7 +62,7 @@ $_SESSION['user'] = $user;
 		<br>
 		<input type="tel" pattern="[0-9]{10}"  placeholder="0798765432" id="phone" required="required">
 		<br>
-		<button type="submit" id="SubmitOrderBtn">submit</button>
+		<button type="submit" id="SubmitOrderBtn">Submit</button>
 	</form>
 	</div>			
 <div id="slides" class="carousel slide" data-ride="carousel">

@@ -36,15 +36,7 @@ $(document).ready(function(){
 		var phone = $("#phone").val().trim();
 		var phoneTrue = (/[0-9]{10}/.test(phone));
 		var eC = $(".elem").length;
-		$(".elem").each(function(){
-			var c = $(this).find(".countSpan").html();
-			var n = $(this).find(".elemName").html();
-			var p = $(this).find(".elemPrice").html();
-			p = p.replace(" RON","");
-			var temp = {name:oleg,prenume:sosi};
-			console.log(temp);
-		});
-		/*if(nume.length >=3  && prenume.length >= 3 && phoneTrue){
+		if(nume.length >=3  && prenume.length >= 3 && phoneTrue){
 			if(eC == 0){
 				$('.alert-danger').html("Nu este nici un element adaugat in cos");
 				$(".alert-danger").slideDown(150);
@@ -53,11 +45,36 @@ $(document).ready(function(){
 				},1000);
 			}
 			else{
-				var value = {nume: nume, prenume: prenume, phone: phone, elementsNr: eC};
-				$.post("../server/submit.php", value, function(data){
-					console.log("Data returned "+data);
+				//totul este bine, se creaza submitul
+				var menu = new Array();
+				$('.elem').each(function(){
+					var temp = {
+						"Denumire" : $(this).find('.elemName').html(),
+						"Cantitate" : parseInt($(this).find('.countSpan').html()),
+						"Pret" : parseInt($(this).find('.elemPrice').html()),
+					};
+					menu.push(temp);
 				});
-
+				//trimitem meniul in forma de array la php(partea de server)
+			menu = JSON.stringify(menu);
+			var client = {
+				"Nume": nume,
+				"Prenume": prenume,
+				"Telefon": phone,
+			}
+			client = JSON.stringify(client);
+				$.ajax({
+					type: "POST",
+					url: "../server/submit.php",
+					data: {'menu': menu,
+					'client': client},
+					success: function(data){
+						alert(data);
+					},
+					error: function(data){
+						alert(data);
+					}
+				});
 			}
 		}
 		else{
@@ -66,7 +83,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 				$(".alert-danger").slideUp(150);
 			},1000);
-		}*/
+		}
 	});
 	var menuDivpos = $("#menuDiv").offset().top-0.50;
 	var aboutUsDivpos = $("#aboutUsDiv").offset().top-0.50;

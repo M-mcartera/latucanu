@@ -1,4 +1,27 @@
 <?php
+$menu = $_POST['menu'];
+$client = $_POST['client'];
+
+//echo $client;
+//echo $menu;
+
+include_once "connection.php";
+$sql = "INSERT INTO comenzi(client) VALUES ($client)";
+if($conn->query($sql) == TRUE){
+	echo "post succesful";
+}
+else{
+	echo "not succesful";
+}
+
+
+
+
+
+
+
+//nu este valid, trebuie de schimbat logica
+/*
 include_once "connection.php";
 session_start();
 $user = $_SESSION['user'];
@@ -51,5 +74,5 @@ else{
 }
 else{
 	echo "<br"."Error creating database: " . $conn->error;
-}
+}*/
 ?>
