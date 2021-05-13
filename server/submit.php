@@ -1,12 +1,14 @@
 <?php
+include_once "connection.php";
+
+
 $menu = $_POST['menu'];
 $client = $_POST['client'];
 
-//echo $client;
-//echo $menu;
 
-include_once "connection.php";
-$sql = "INSERT INTO comenzi(client) VALUES ($client)";
+
+
+$sql = "INSERT INTO comenzi(client,meniu) VALUES ('$client','$menu')";
 if($conn->query($sql) == TRUE){
 	echo "post succesful";
 }

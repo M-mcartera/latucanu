@@ -1,10 +1,3 @@
-<?php
-$rand = rand(1,10);
-$user = "user" . $rand;
-session_start();
-$_SESSION['user'] = $user;	
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -486,8 +479,8 @@ $_SESSION['user'] = $user;
 		</div>
 	</div>
 </div>
-<div class="alert alert-succes">Produsul a fost adaugat cu succes!</div>
-<div class="alert alert-danger">Erroare!</div>
+<div class="alert alert-succes">Produsul a fost adaugat cu succes</div>
+<div class="alert alert-danger"></div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"
 integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
